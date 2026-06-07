@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Sayangg ❤️</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #ffe6ef, #ffd8e8);
+        overflow-x: hidden;
+        color: #ff4f93;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .title h1 {
+        font-size: 2.2rem;
+      }
+
+      .title p {
+        margin-top: 8px;
+      }
+
+      .hero {
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 15px;
+      }
+
+      .section-title {
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        border: none;
+        background: #ff4f93;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .love-bar {
+        height: 25px;
+        background: #ffe3ef;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 15px 0;
+      }
+
+      .fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff5aa8, #ff82c0);
+        transition: 1s;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .kiss-count {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .quote {
+        background: #fff2f7;
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      .reason {
+        padding: 15px;
+        background: #fff5fa;
+        border: 2px solid #ffd3e5;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .reason p {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .mood-btn {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .mood-result {
+        margin-top: 15px;
+        background: #fff2f7;
+        padding: 15px;
+        border-radius: 15px;
+        display: none;
+      }
+
+      .counter-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .counter-box {
+        background: #fff2f7;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .counter-box h2 {
+        font-size: 2rem;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        color: #ff4f93;
+      }
+
+      .music-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background: #ff4f93;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 999;
+      }
+
+      .heart {
+        position: fixed;
+        font-size: 20px;
+        animation: float 4s linear forwards;
+        pointer-events: none;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-400px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card title">
+        <h1>💖 khusus buat ayanggkuu 💖</h1>
+        <p>sayanggg, ini buatt ayanggg 🥰</p>
+
+        <img src="foto-kita.jpg" class="hero" />
+      </div>
+
+      <div class="card center">
+        <div class="section-title">seberapa besar cintaku ke ayangg</div>
+
+        <div class="love-bar">
+          <div class="fill" id="fill"></div>
+        </div>
+
+        <h2 id="loveResult">?</h2>
+
+        <br />
+
+        <button class="btn" onclick="ukurCinta()">ukur lagi sayangg</button>
+      </div>
+
+      <div class="card center">
+        <div class="section-title">cium aku ayanggg😚</div>
+
+        <div class="kiss-count" id="kissCount">0</div>
+
+        <p>cium aku banyak banyak ayangg😚</p>
+
+        <br />
+
+        <button class="btn" onclick="kirimCiuman()">send a kiss😚</button>
+      </div>
+
+      <div class="card center">
+        <div class="section-title">pesan buat ayangg hari inii💌</div>
+
+        <div class="quote" id="quote">
+          sama ayangg hari yang berat terasa mudah 💖
+        </div>
+
+        <button class="btn" onclick="newQuote()">pesan baru🎲</button>
+      </div>
+
+      <div class="card">
+        <div class="section-title">alasan aku sayangg kamuu🫶</div>
+
+        <div class="reason" onclick="toggleReason(this)">
+          cara ngomongnya ayangg😆
+          <p>suka banget cara ngomong ayangg lucuuu tauu gemess makanya kusuka banget dengerin suara ayangg mwehe😋</p>
+        </div>
+
+        <div class="reason" onclick="toggleReason(this)">
+          perhatianmu🤍
+          <p>untukku yang biasa sendirian disini dan dapet perhatian darimu itu bikin aku ngerasa disayangg bangett🥺 ku ngerasa aman banget sama kamu sayangg</p>
+        </div>
+
+        <div class="reason" onclick="toggleReason(this)">
+          kehadiranmu🥺
+          <p>kehadiranmu dalam hidupku bikin duniaku yang sebelumnya gelap dan hambar jadi lebih berwarna🤍</p>
+        </div>
+
+        <div class="reason" onclick="toggleReason(this)">
+          karna kamu😋
+          <p>karna ayangg mau memilihku disaat banyak cowo yang mau sama kamu, karna ayangg mau bertahan dikala kita ada masalah, karna ayangg mau nerima aku apa adanya, karna ayangg mau menemaniku dan karna aku maunya kamu sayangg🫶</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">ayangg lagii mood apa hari ini🥺</div>
+
+        <button class="btn mood-btn" onclick="mood('seneng')">
+          lagi seneng banget😊
+        </button>
+
+        <button class="btn mood-btn" onclick="mood('capek')">
+          cape banget😮‍💨 
+        </button>
+
+        <button class="btn mood-btn" onclick="mood('kangen')">
+          lagi kangen kamu🥹
+        </button>
+
+        <button class="btn mood-btn" onclick="mood('kesel')">
+          lagi kesel dikit😤
+        </button>
+
+        <div class="mood-result" id="moodResult"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">⏳ waktu kita bersama</div>
+
+        <div class="counter-grid">
+          <div class="counter-box">
+            <h2 id="days">0</h2>
+            Hari
+          </div>
+
+          <div class="counter-box">
+            <h2 id="hours">0</h2>
+            Jam
+          </div>
+
+          <div class="counter-box">
+            <h2 id="minutes">0</h2>
+            Menit
+          </div>
+
+          <div class="counter-box">
+            <h2 id="seconds">0</h2>
+            Detik
+          </div>
+        </div>
+
+        <p class="center" style="margin-top: 15px">sejak 26 Februari 2026 🤍</p>
+      </div>
+
+      <div class="footer">
+        dibuat dengan penuh cinta oleh<br />
+        <b>iori the one and only your lilboy😋</b>
+      </div>
+    </div>
+
+    <audio id="bgmusic" loop>
+      <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+    <script>
+      const quotes = [
+        "sayangg dijaga ya kesehatannya ku sedih kalo ayangg sakitt🥺",
+        "aku suka semua versi dirimu sayangg🤍",
+        "maacii ayangg sudah hadir di hidupku😚",
+        "apapun yang terjadi aku akan tetap pilih kamu sayangg🫶",
+        "kamu rumah yang selalu bikin aku ingin pulang🏡",
+        "ayangg jangan bosen ya sama akuu🥺",
+        "ayangg jangan tinggalinn akuu🥺",
+      ];
+
+      function newQuote() {
+        const random = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote").innerText = random;
+      }
+
+      function ukurCinta() {
+        const persen = Math.floor(Math.random() * 3) + 98;
+
+        document.getElementById("fill").style.width = persen + "%";
+
+        if (persen === 100) {
+          document.getElementById("loveResult").innerHTML =
+            "100% ❤️<br>eh error, iyalah error kan cintaku ke ayangg gabisa dihitung😝";
+        } else {
+          document.getElementById("loveResult").innerHTML = persen + "% 💕";
+        }
+      }
+
+      let kiss = 0;
+
+      function kirimCiuman() {
+        kiss++;
+
+        document.getElementById("kissCount").innerText = kiss;
+
+        for (let i = 0; i < 5; i++) {
+          const heart = document.createElement("div");
+
+          heart.className = "heart";
+
+          heart.innerHTML = "💖";
+
+          heart.style.left = Math.random() * 100 + "vw";
+
+          heart.style.bottom = "0";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 4000);
+        }
+      }
+
+      function toggleReason(el) {
+        const p = el.querySelector("p");
+
+        p.style.display = p.style.display === "block" ? "none" : "block";
+      }
+
+      function mood(type) {
+        const result = document.getElementById("moodResult");
+
+        result.style.display = "block";
+
+        const text = {
+          seneng: "yayy ayangg lagi senenggg🥳 kujadii ikut seneng kalo ayangg lagi senengg😆",
+
+          capek:
+            "kaciann ayanggku lagi cape🥺 istirahat ya sayangg kalo lagi cape. i'm so proud of you🤍",
+
+          kangen: "aaaaaaaaaa aku juga kangen banget sama ayanggg😭 sini sayanggg peluk virtual duluu🥺",
+
+          kesel: "ihh siapa yang bikin ayangg kesell😾 sok asik banget itu yang bikin ayangg keselll😤 sini sayangg cerita ke akuu biar ga kesel lagii",
+        };
+
+        result.innerHTML = text[type];
+      }
+
+      const startDate = new Date("2026-02-26T00:00:00");
+
+      function updateCounter() {
+        const now = new Date();
+
+        const diff = now - startDate;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+      }
+
+      setInterval(updateCounter, 1000);
+
+      updateCounter();
+
+      const music = document.getElementById("bgmusic");
+
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+        } else {
+          music.pause();
+        }
+      }
+
+      ukurCinta();
+    </script>
+  </body>
+</html>
